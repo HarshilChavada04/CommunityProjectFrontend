@@ -1,11 +1,76 @@
 <template>
-  <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    >
-  </q-page>
+  <transition
+    appear
+    enter-active-class="animated fadeIn slower"
+    leave-active-class="animated fadeOut slower"
+  >
+    <span>Hello</span>
+  </transition>
+  <div class="column">
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+    <span>Hello</span>
+  </div>
 </template>
 
 <script setup>

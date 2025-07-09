@@ -1,1 +1,130 @@
-// app global css in SCSS form
+:root {
+  --q-primary: #e59120; // Saffron Gold
+  --q-secondary: #ffc26f; // Deep Indigo
+  --q-accent: #2196f3; // Sky Blue
+
+  --q-positive: #4caf50; // Meadow Green
+  --q-negative: #c62828; // Rich Maroon
+  --q-info: #2196f3; // Sky Blue (again)
+  --q-warning: #f9a825; // Saffron Gold reused
+
+  --q-dark: #212121; // Charcoal Black
+  --q-dark-page: #121212; // Unchanged (deep background)
+
+  // 🎨 Additional Custom Tokens
+  --q-background: #e5e5e5; // Soft Snow White
+  --q-text-primary: #212121; // Charcoal Black
+  --q-text-secondary: #616161; // Slate Grey
+  --q-card-bg: #fffde7; // Light Ivory
+  --q-toggle-gujarati: #795548; // Earth Brown
+  --q-active-color: #7e4c07;
+}
+
+$opacity-map: (
+  10: 0.1,
+  20: 0.2,
+  30: 0.3,
+  40: 0.4,
+  50: 0.5,
+  60: 0.6,
+  70: 0.7,
+  80: 0.8,
+  90: 0.9,
+  100: 1,
+);
+
+$secondary-color: #ffc26f;
+
+body {
+  background-color: var(--q-background);
+}
+
+// Generate classes like .bg-secondary-opacity-10
+@each $key, $alpha in $opacity-map {
+  .bg-secondary-#{$key} {
+    background-color: rgba($secondary-color, $alpha);
+  }
+}
+
+@for $i from 1 through 1000 {
+  .ma-#{$i} {
+    margin: #{$i}px;
+  }
+
+  .mt-#{$i} {
+    margin-top: #{$i}px;
+  }
+
+  .mb-#{$i} {
+    margin-bottom: #{$i}px;
+  }
+
+  .ml-#{$i} {
+    margin-left: #{$i}px;
+  }
+
+  .mr-#{$i} {
+    margin-right: #{$i};
+  }
+
+  .pa-#{$i} {
+    padding: #{$i}px;
+  }
+
+  .pt-#{$i} {
+    padding-top: #{$i}px;
+  }
+
+  .pb-#{$i} {
+    padding-bottom: #{$i}px;
+  }
+
+  .pl-#{$i} {
+    padding-left: #{$i}px;
+  }
+
+  .pr-#{$i} {
+    padding-right: #{$i}px;
+  }
+
+  .px-#{$i} {
+    padding-left: #{$i}px;
+    padding-right: #{$i}px;
+  }
+
+  .py-#{$i} {
+    padding-top: #{$i};
+    padding-bottom: #{$i};
+  }
+
+  .font-#{$i} {
+    font-size: #{$i}px;
+  }
+
+  .w-#{$i} {
+    width: #{$i}px;
+  }
+}
+
+.primary-btn {
+  background-color: var(--q-primary);
+  color: whitesmoke;
+  border-radius: 7px;
+  text-transform: none;
+}
+
+.text-active-class {
+  color: var(--q-active-color) !important;
+}
+
+.bg-active-color {
+  background-color: var(--q-active-color) !important;
+}
+
+.primary-btn::before {
+  box-shadow: none;
+}
+
+.text-snowwhite {
+  color: #f5f5f5;
+}

@@ -1,5 +1,6 @@
 import { defineRouter } from '#q-app/wrappers'
-import { createRouter, createMemoryHistory, createWebHistory, createWebHashHistory } from 'vue-router'
+import { createRouter, createMemoryHistory, createWebHistory } from 'vue-router'
+import { useAuthStore } from 'src/stores/auth'
 import routes from './routes'
 
 /*
@@ -12,9 +13,7 @@ import routes from './routes'
  */
 
 export default defineRouter(function (/* { store, ssrContext } */) {
-  const createHistory = process.env.SERVER
-    ? createMemoryHistory
-    : (process.env.VUE_ROUTER_MODE === 'history' ? createWebHistory : createWebHashHistory)
+  const createHistory = process.env.SERVER ? createMemoryHistory : createWebHistory
 
   const Router = createRouter({
     scrollBehavior: () => ({ left: 0, top: 0 }),
@@ -23,7 +22,21 @@ export default defineRouter(function (/* { store, ssrContext } */) {
     // Leave this as is and make changes in quasar.conf.js instead!
     // quasar.conf.js -> build -> vueRouterMode
     // quasar.conf.js -> build -> publicPath
-    history: createHistory(process.env.VUE_ROUTER_BASE)
+    history: createHistory(process.env.VUE_ROUTER_BASE),
+  })
+
+  Router.beforeEach((to, from, next) => {
+    const auth = useAuthStore()
+    const token = auth.accessToken
+    const blnIsLogedIn = !!token
+
+    if ((to.path === '/' || to.path === '/login') && blnIsLogedIn) {
+      next('/dashboard')
+    } else if (to.path !== '/' && to.path !== '/login' && !blnIsLogedIn) {
+      next('/login')
+    } else {
+      next()
+    }
   })
 
   return Router
