@@ -23,8 +23,8 @@ const routes = [
       },
       {
         path: '/manage-users',
-        name: 'manage-user',
-        component: () => import('pages/IndexPage.vue'),
+        name: 'manage-users',
+        component: () => import('pages/ManagerUsers.vue'),
         meta: {
           label: 'Manage Users',
           icon: 'fa-solid fa-list-check',

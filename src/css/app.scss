@@ -104,12 +104,23 @@ body {
   .w-#{$i} {
     width: #{$i}px;
   }
+
+  .border-radius-#{$i} {
+    border-radius: #{$i}px;
+  }
 }
 
 .primary-btn {
   background-color: var(--q-primary);
   color: whitesmoke;
-  border-radius: 7px;
+  border-radius: 4px;
+  text-transform: none;
+}
+
+.primary-btn-o {
+  border: 1px solid var(--q-primary);
+  color: var(--q-primary);
+  border-radius: 4px;
   text-transform: none;
 }
 
@@ -122,6 +133,10 @@ body {
 }
 
 .primary-btn::before {
+  box-shadow: none;
+}
+
+.primary-btn-o::before {
   box-shadow: none;
 }
 
