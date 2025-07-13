@@ -4,7 +4,7 @@ export const showSuccess = (message = 'Success') => {
   Notify.create({
     type: 'positive',
     message,
-    position: 'top',
+    position: 'bottom',
     timeout: 2500,
     progress: true,
   })
@@ -14,7 +14,7 @@ export const showError = (message = 'Something went wrong') => {
   Notify.create({
     type: 'negative',
     message,
-    position: 'top',
+    position: 'bottom',
     timeout: 3000,
     progress: true,
   })

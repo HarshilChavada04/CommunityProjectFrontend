@@ -13,6 +13,9 @@
           outlined
           dense
           placeholder="Enter email or phone"
+          @keyup.enter="handleLoginSubmit"
+          @copy.prevent
+          @paste.prevent
         >
         </q-input>
         <q-input
@@ -22,6 +25,9 @@
           outlined
           dense
           placeholder="Enter password"
+          @keyup.enter="handleLoginSubmit"
+          @copy.prevent
+          @paste.prevent
         >
           <template v-slot:append>
             <q-btn

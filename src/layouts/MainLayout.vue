@@ -15,6 +15,7 @@
       </q-toolbar>
     </q-header>
     <!-- Sidebar Drawer -->
+
     <q-drawer
       v-model="drawerOpen"
       show-if-above
@@ -24,6 +25,7 @@
       :breakpoint="500"
       elevated
       class="column no-wrap full-height bg-primary"
+      behavior="desktop"
     >
       <!-- Toggle Button -->
       <q-btn
@@ -68,6 +70,9 @@
           <q-item-section v-if="drawerOpen">
             {{ item.label }}
           </q-item-section>
+          <q-tooltip v-if="miniState" anchor="center right" self="center middle">
+            {{ item.label }}
+          </q-tooltip>
         </q-item>
       </q-list>
 
@@ -91,12 +96,12 @@
     </q-drawer>
 
     <!-- Main Content -->
-    <transition
-      appear
-      enter-active-class="animated slideInDown slower"
-      leave-active-class="animated slideInUp slower"
-    >
-      <q-page-container>
+    <q-page-container>
+      <transition
+        appear
+        enter-active-class="animated slideInDown slower"
+        leave-active-class="animated slideInUp slower"
+      >
         <q-bar class="q-px-md q-py-lg bg-secondary-30">
           <q-breadcrumbs class="text-bold text-capitalize">
             <template v-slot:separator>
@@ -109,9 +114,9 @@
             />
           </q-breadcrumbs>
         </q-bar>
-        <router-view />
-      </q-page-container>
-    </transition>
+      </transition>
+      <router-view />
+    </q-page-container>
   </q-layout>
 </template>
 
