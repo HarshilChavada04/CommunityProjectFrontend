@@ -24,7 +24,7 @@ const routes = [
       {
         path: '/manage-users',
         name: 'manage-users',
-        component: () => import('pages/ManagerUsers.vue'),
+        component: () => import('src/pages/ManageUsers.vue'),
         meta: {
           label: 'Manage Users',
           icon: 'fa-solid fa-list-check',
