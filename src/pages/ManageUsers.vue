@@ -64,6 +64,7 @@
         v-model:pagination="pagination"
         hide-pagination
         style="max-height: calc(100vh - 18rem); overflow: auto"
+        class="my-sticky-virtscroll-table"
       />
       <q-separator />
       <div class="row justify-between items-baseline q-px-md q-py-lg">

@@ -143,3 +143,23 @@ body {
 .text-snowwhite {
   color: #f5f5f5;
 }
+
+.my-sticky-virtscroll-table {
+  .q-table__top,
+  .q-table__bottom,
+  thead tr:first-child th {
+    // bg color is important for th; just specify one
+    background-color: var(--q-secondary);
+    color: rgb(45, 43, 43);
+    font-weight: bold;
+  }
+
+  thead tr th {
+    position: sticky;
+    z-index: 1;
+  }
+
+  thead tr:first-child th {
+    top: 0;
+  }
+}
